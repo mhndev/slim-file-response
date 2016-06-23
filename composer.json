@@ -1,0 +1,26 @@
+{
+    "name": "mhndev/slim-file-response",
+    "description": "Slim File Response",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Majid Abdolhosseini",
+            "email": "majid8911303@gmail.com"
+        }
+    ],
+
+    "autoload": {
+      "psr-4": {
+        "mhndev\\slimFileResponse\\": "src"
+      }
+    },
+
+
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "^3.0"
+    },
+
+    "minimum-stability": "dev"
+}
