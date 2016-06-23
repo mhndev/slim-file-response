@@ -57,8 +57,7 @@ class FileResponse
 
                 default;
                     $response = $response->withHeader("Content-type","application/octet-stream");
-                    bre
-                    ak;
+                    break;
             }
 
             $response = $response->withHeader("Content-Disposition",'filename="'.$outputName.'"');
