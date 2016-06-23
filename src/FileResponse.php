@@ -15,16 +15,20 @@ class FileResponse
      * @param Response $response
      * @param string $fileName
      *
+     * @param null $outputName
      * @return Response|static
      */
-    public static function getResponse(Response $response, $fileName)
+    public static function getResponse(Response $response, $fileName, $outputName = null)
     {
+
         if ($fd = fopen ($fileName, "r")) {
 
             $size = filesize($fileName);
             $path_parts = pathinfo($fileName);
             $ext = strtolower($path_parts["extension"]);
 
+            if(!$outputName)
+                $outputName = $path_parts["basename"];
 
             switch ($ext) {
                 case "pdf":
@@ -52,11 +56,12 @@ class FileResponse
                     break;
 
                 default;
-                    $response = $response->withHeader("Content-Disposition","attachment; filename=\"".$path_parts["basename"]."\"");
                     $response = $response->withHeader("Content-type","application/octet-stream");
-                    $response = $response->withHeader("Content-Disposition","filename=\"".$path_parts["basename"]."\"");
-                    break;
+                    bre
+                    ak;
             }
+
+            $response = $response->withHeader("Content-Disposition",'filename="'.$outputName.'"');
             $response = $response->withHeader("Cache-control","private");
             $response = $response->withHeader("Content-length",$size);
 
@@ -68,4 +73,5 @@ class FileResponse
 
         return $response;
     }
+
 }
