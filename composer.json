@@ -3,6 +3,7 @@
     "description": "Slim File Response",
     "type": "library",
     "license": "MIT",
+    "keywords":["slim", "http", "response", "file", "http-file-response"],
     "authors": [
         {
             "name": "Majid Abdolhosseini",
