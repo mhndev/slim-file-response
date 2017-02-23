@@ -27,8 +27,13 @@ class FileResponse
             $path_parts = pathinfo($fileName);
             $ext = strtolower($path_parts["extension"]);
 
-            if(!$outputName)
+            if(!$outputName) {
                 $outputName = $path_parts["basename"];
+            }else{
+                if(count(explode('.', $outputName)) <= 1){
+                    $outputName = $outputName.'.'.$ext;
+                }
+            }
 
             switch ($ext) {
                 case "pdf":
