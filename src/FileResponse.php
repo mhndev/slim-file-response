@@ -2,8 +2,8 @@
 
 namespace mhndev\slimFileResponse;
 
-use Slim\Http\Response;
-use Slim\Http\Stream;
+use Psr\Http\Message\ResponseInterface as Response;
+use Slim\Psr7\Stream;
 
 /**
  * Class FileResponse
